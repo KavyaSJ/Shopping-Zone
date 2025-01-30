@@ -9,6 +9,9 @@
 </head>
 <body>
     <style>
+        .account{
+            text-align: center;
+        }
         .form-settings > input,textarea{
         width:40%;
         font-size: 15px;
@@ -27,7 +30,7 @@
         
     </style>
     <div class="account">
-       <form  id="" class="form-settings" action="profile.html" method="get" > 
+       <form  id="" class="form-settings" action="" method="get" > 
          <label for="first_name">First Name</label> <br>
          <input type="text" id="first_name" class="f_name" placeholder="First Name" required> <br>
 
@@ -41,7 +44,90 @@
          <input type="password" id="pass" class="password" placeholder="Password" required><br>
 
          <button type="submit" class="btn btn-primary form-button">Submit</button>
+           <div id="errorMsgs"> </div>
        </form>
+
+        <script>
+            validate = () =>{
+                let isValid = true;
+                let errorMsgs = [];// empty array
+
+                const user_fname = document.getElementById("first_name").value;
+                const user_lname = document.getElementById("last_name").value;
+                const user_email = document.getElementById("email").value;
+                const user_pwd = document.getElementById("pass").value;
+               // const togglePassword = document.getElementById("toggle-password");
+                const error_msg = document.getElementById("errorMsgs");
+
+                error_msg.innerHTML= "" ;
+                error_msg.style.backgroundColor="LightBlue";
+                error_msg.style.color="Red";
+
+                // name validation
+                if(user_fname.trim() === ""){
+                    isValid=false;
+                    errorMsgs.push("First name is required!");
+                }
+
+                if(user_lname.trim() === ""){
+                    isValid=false;
+                    errorMsgs.push("Last name is required!");
+                }
+
+                // email pattern regEx
+                // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,6}$/;
+                if(!emailPattern.test(user_email)){
+                    isValid=false;
+                    errorMsgs.push("Enter the valid email!")
+                }
+
+                // password validation
+                
+
+                if(user_pwd.length < 8){
+                    isValid=false;
+                    errorMsgs.push("Password musgt be atleast 8 characters!");
+                }
+
+                // uppercase
+                const uppercasePattern = /[A-Z]/;
+
+                if(!uppercasePattern.test(user_pwd)){
+                    isValid=false;
+                    errorMsgs.push("Password must contain atleast one uppercase letter!");
+                }
+
+                 // lowercase
+                 const lowercasePattern = /[a-z]/;
+
+                if(!lowercasePattern.test(user_pwd)){
+                    isValid=false;
+                    errorMsgs.push("Password must contain atleast one lowercase letter!");
+                }
+
+                   // digits
+                   const digitPattern = /[0-9]/;
+
+                if(!digitPattern.test(user_pwd)){
+                    isValid=false;
+                    errorMsgs.push("Password must contain atleast one digit!");
+                }
+
+                 // special charcter check
+                 const specialcharPattern = /[!@#$%^&*(),.?"[]/\:{}|<>}]/;
+
+                if(!specialcharPattern.test(user_pwd)){
+                    isValid=false;
+                    errorMsgs.push("Password must contain atleast special character!");
+                }
+                if(!isValid){
+                    error_msg.innerHTML = errorMsgs.join('<br>');
+                }
+            return isValid;
+
+            }
+        </script>
     </div>
     <br>
     <div class="container">
