@@ -16,31 +16,31 @@
         width:40%;
         font-size: 15px;
         margin-bottom: 20px;
-        border-radius: 8px;
+        border-radius: 6px;
         border:1px solid rgb(158, 152, 152);
 
       }
       .form-settings > input:hover,textarea:hover{
         background-color: rgb(244, 244, 172);
-        border-radius: 8px;
+        border-radius: 6px;
      }    
     </style>
     
     <div class="account">
-       <form  id="" class="form-settings" action=""  > 
+       <form  id="" class="form-settings" action="" name="signgp-form" > 
          <label for="first_name">First Name</label> <br>
-         <input type="text" id="first_name" class="f_name" placeholder="First Name" > <br>
+         <input type="text" id="first_name" class="f_name" name="fname" placeholder="First Name" > <br>
 
          <label for="">Last Name</label> <br>
-         <input type="text" id="last_name" class="l_name" placeholder="Last Name"> <br>
+         <input type="text" id="last_name" name="lname" class="l_name" placeholder="Last Name"> <br>
 
          <label for="email">Email</label><br>
-         <input type="email" id="email" class="e-mail" placeholder="Email"><br>
+         <input type="email" id="email" class="e-mail" name="email"  placeholder="Email"><br>
 
          <label for="pass">Password</label><br>
-         <input type="password" id="pass" class="password" placeholder="Password" ><br>
+         <input type="password" id="pass" class="password" name="password"  placeholder="Password" ><br>
 
-         <button type="submit" class="btn btn-primary form-button">Submit</button>
+         <button type="submit" id="btn" class="btn btn-primary form-button">Submit</button>
            <div id="errorMsgs"> </div>
        </form>
 
@@ -53,7 +53,7 @@
                 const user_lname = document.getElementById("last_name").value;
                 const user_email = document.getElementById("email").value;
                 const user_pwd = document.getElementById("pass").value;
-               // const togglePassword = document.getElementById("toggle-password");
+                const button = document.getElementById("btn");
                 const error_msg = document.getElementById("errorMsgs");
 
                 error_msg.innerHTML= "" ;
