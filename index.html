@@ -42,7 +42,7 @@
     </header>
     <br>
     <hr>
-    <main id="amazon-sales" class="nav-a-sales">Today's Sales
+    <main id="amazon-sales" class="nav-a-sales">Today's sales
       <div class="banner-img">
         <img class="banner" src="asset\banner.png" alt="banner img">
         <p class="note">Find fabulous for less</p>
@@ -60,7 +60,7 @@
                 <img class="bags-list1" src="asset\bag-1.jpg" alt="Bag img">
               </div> 
               <div class="card-bag-bottom">
-                <button type="button">More Option</button>
+                <button type="button" id="nav-btn1">More Option</button>
               </div>
             </div>  
             
@@ -73,7 +73,7 @@
                 <img  class="bags-list2" src="asset\black-bag-hands.jpg" alt="Bag img">
               </div>
               <div class="card-bag-bottom">
-                <button type="button">More Option</button>
+                <button type="button" id="nav-btn2">More Option</button>
               </div>
             </div>
 
@@ -85,7 +85,7 @@
                 <img  class="bags-list2" src="asset\bags.jpg" alt="Bag img">
               </div>
               <div class="card-bag-bottom">
-                <button type="button">More Option</button>
+                <button type="button" id="nav-btn3">More Option</button>
               </div>
             </div>
 
@@ -97,7 +97,7 @@
                 <img  class="bags-list3" src="asset\fashionable-bags.jpg" alt="Bag img">
               </div>
               <div class="card-bag-bottom">
-                <button type="button">More Option</button>
+                <button type="button" id="nav-btn4">More Option</button>
               </div>
             </div>
           </div>  
@@ -150,7 +150,7 @@
         </div>
         <br>
 
-        <div id="cloth" class="sales-clothes">
+        <div id="cloth" class="sales clothes">
           <h2>Clothes</h2>
             <br>
           <div class="clothes-card">
@@ -189,43 +189,43 @@
           <h2>Accessories</h2>
           <br>
           <div class="accesories-card">
-            <div class="card accesory">
+            <div class="card-accesory">
               <div class="card-left"> 
-                <span> Get Ready for the New Style</span>
-              </div>
-              <div class="card-center"> 
                 <img src="asset\sunglasses.jpg" alt="Ear ring img">
+                <img src="asset\crown.jpg" alt="">
               </div>
               <div class="card-right">
                 <img src="asset\watch.jpg" alt="bracelet img">
                 <img src="asset\bracelet.jpg" alt="necklace img">
               </div> 
+              <div class="card-bottom"> 
+                <span> Get Ready for the New Style</span>
+              </div>
             </div>
 
-            <div class="card accesory">
+            <div class="card-accesory">
+              
               <div class="card-left"> 
-                <span> Get Ready for the Event</span>
-              </div>
-              <div class="card-center"> 
                 <img src="asset\jewelry-5.jpg" alt="Ear ring img">
+                <img src="asset\timepiece.jpg" alt="">
               </div>
               <div class="card-right">
                 <img src="asset\jewelry.jpg" alt="bracelet img">
-                <img src="asset\ring.jpg" alt="necklace img">
-                
+                <img src="asset\ring.jpg" alt="necklace img"> 
+              </div>
+              <div class="card-bottom"> 
+                <span> Get Ready for the Event</span>
               </div>
             </div>
           </div>  
 
           
         </div>
+        
         <br>
-        <video width=100% height="400" controls>
-          <source src="{{ url_for('static', filename='images/video.mp4') }}" type="video/mp4" autoplay>
-        </video>
     </main>
     <br>
-    <hr>
+    
 
        
 <div class="container">
@@ -282,6 +282,7 @@
     </div>
   </footer>
 </div>
+<script src="javascript/jscript.js"></script>
 
   
 </body>
